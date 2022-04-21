@@ -1,0 +1,34 @@
+@using  Tecinfor.Models
+@model Cliente
+@{
+    ViewData["title"] = "Alteração";
+}
+<h1>@ViewData["Title"]</h1>
+
+<P class = "text-danger">@ViewData["mensagem"]</P>
+ 
+<form method = "Post" asp-action = "Alterar">
+<p>
+  <label asp-for = "Nome">Nome</label>
+  <input asp-for = "Nome"> 
+</p>
+  <p>
+  <label asp-for = "Contato">Contato</label>
+  <input asp-for = "Contato"> 
+</p>
+<p>
+  <label asp-for = "Servico">Serviço</label>
+  <input asp-for = "Servico">
+</p>
+<p>
+  <label asp-for= "DataServico">Data do Serviço</label>
+  <input asp-for= "DataServico">
+</p>
+
+
+<P>
+    <input asp-for= "Id" type = "hidden">
+    <input type= "submit" value = "Alterar">
+</P>
+
+</form>

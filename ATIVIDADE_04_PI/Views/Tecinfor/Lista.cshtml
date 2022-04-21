@@ -1,0 +1,42 @@
+@using Tecinfor.Models
+@model List<Cliente>
+
+  @{
+    ViewData["title"] = "Lista";
+}
+<table class = "table"> <!--para transformar em tabela usar esse class table -->
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Contato</th>
+            <th>Serviço</th>
+            <th>Data do Serviço</th>
+        </tr>
+    </thead>
+       
+       @foreach (Cliente t in Model)
+       { 
+              <tr>
+                 <Td>@t.Id</Td>
+                 <Td>@t.Nome</Td>
+                 <Td>@t.Contato</Td>
+                 <Td>@t.Servico<Td>
+                 <Td>@t.DataServico</Td>
+                 
+                 <td>
+                       <!--ROTA ALTERAR-->  <a href = "/Tecinfor/Alterar?Id=@t.Id">Alterar</a>
+                
+                   <!--ROTA EXCLUIR-->  <a href = "/Tecinfor/Excluir?Id=@t.Id">Excluir</a> <!--codigo utilizado para fazer botão executavel EX: Excluir-->
+                     
+                  
+                 </td>
+              </tr>
+           
+       }
+<tbody>
+
+
+</tbody>
+
+</table>   
